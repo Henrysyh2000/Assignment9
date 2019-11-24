@@ -9,7 +9,16 @@ def comb_sort(array):
 
         :param array: the python list being sorted
     '''
-    pass
+    gap = int(len(array) // 1.3)
+    state = True
+    while state:
+        state = False
+        for a in range(len(array) - gap):
+            if array[a] > array[a + gap]:
+                state = True
+                array[a], array[a + gap] = array[a + gap], array[a]
+        while gap > 1:
+            gap = int(gap // 1.3)
 
 
 def main():

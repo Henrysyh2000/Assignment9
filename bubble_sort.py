@@ -5,8 +5,13 @@ def bubble_sort(array):
         :param array: the python list being sorted
     """
     # Your code
-    pass
-
+    num = len(array)
+    while num > 0:
+        for i in range(num - 1):
+            if array[i] > array[i + 1]:
+                array[i], array[i + 1] = array[i + 1], array[i]
+        num -= 1
+    return array
 def main():
     array = []
     for i in range(20):

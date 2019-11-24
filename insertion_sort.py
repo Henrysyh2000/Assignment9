@@ -6,8 +6,14 @@ def insertion_sort(array):
         :param array: the python list being sorted
     """
     # To do
-    pass
-
+    if len(array) == 1:
+        return array
+    for i in range(len(array) - 1):
+        count = i + 1
+        while array[count] < array[count - 1] and count > 0:
+            array[count], array[count - 1] = array[count - 1], array[count]
+            count -= 1
+    return array
 
 def main():
     array = []

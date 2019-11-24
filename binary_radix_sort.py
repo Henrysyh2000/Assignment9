@@ -89,7 +89,10 @@ def determine_digit(integer, digit):
                     (1 represents second digit from the right)
     """
     # To do
-    pass
+    num = bin(integer)[2:]
+    if digit >= len(num):
+        return 0
+    return int(num[-digit - 1])
 
 
 def radix_sort(array):
@@ -98,8 +101,25 @@ def radix_sort(array):
         :param array: the list being sorted
     """
     # To do
-    pass
-
+    Q0 = LinkedQueue()
+    Q1 = LinkedQueue()
+    digits = max(array) - 2
+    count = 0
+    while digits != 0:
+        for i in array:
+            if determine_digit(i, count) == 0:
+                Q0.enqueue(i)
+            else:
+                Q1.enqueue(i)
+        pos = 0
+        while Q0:
+            array[pos] = Q0.dequeue()
+            pos += 1
+        while Q1:
+            array[pos] = Q1.dequeue()
+            pos += 1
+        count += 1
+        digits -= 1
 
 
 def main():

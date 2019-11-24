@@ -1,5 +1,4 @@
 import random
-
 def find_max(array, a, b):
     ''' Finds the position of the largest element between two indices in the array.
         @array: the python list
@@ -32,9 +31,12 @@ def summer_sort(array):
         :param array: the python list
     '''
     # To do
-    pass
-
-
+    num = len(array)
+    while num > 0:
+        i = find_max(array, 0, num)
+        reverse(array, i, num - 1)
+        num -= 1
+    #reverse(array, 0, 1)
 def main():
     array = []
     for i in range(20):
