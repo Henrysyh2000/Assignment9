@@ -103,7 +103,7 @@ def radix_sort(array):
     # To do
     Q0 = LinkedQueue()
     Q1 = LinkedQueue()
-    digits = max(array) - 2
+    digits = len(bin(max(array))) - 2
     count = 0
     while digits != 0:
         for i in array:
